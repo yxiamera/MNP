@@ -1,0 +1,9 @@
+C:\Users\Stud\Desktop\MNP\MNP\bin\Debug\MNP.exe.config
+C:\Users\Stud\Desktop\MNP\MNP\bin\Debug\MNP.exe
+C:\Users\Stud\Desktop\MNP\MNP\bin\Debug\MNP.pdb
+C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.csprojResolveAssemblyReference.cache
+C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.Form1.resources
+C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.Properties.Resources.resources
+C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.csproj.GenerateResource.Cache
+C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.exe
+C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.pdb
