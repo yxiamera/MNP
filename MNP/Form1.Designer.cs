@@ -31,18 +31,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.описаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_RED = new System.Windows.Forms.ToolStripMenuItem();
-            this.директивыРасчетаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_CALC = new System.Windows.Forms.ToolStripMenuItem();
-            this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_INTERNET = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_EXIT = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_F = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_IO = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_PRIV = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID_SYS = new System.Windows.Forms.ToolStripMenuItem();
             this.ID_CONS = new System.Windows.Forms.ToolStripMenuItem();
             this.ID_FILE = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_RED = new System.Windows.Forms.ToolStripMenuItem();
+            this.директивыРасчетаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_F = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_IO = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_CALC = new System.Windows.Forms.ToolStripMenuItem();
+            this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_PRIV = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_SYS = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_INTERNET = new System.Windows.Forms.ToolStripMenuItem();
+            this.ID_EXIT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +79,19 @@
             this.описаниеToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.описаниеToolStripMenuItem.Text = "Описание";
             // 
+            // ID_CONS
+            // 
+            this.ID_CONS.Name = "ID_CONS";
+            this.ID_CONS.Size = new System.Drawing.Size(180, 22);
+            this.ID_CONS.Text = "Ввод с клавиатуры";
+            this.ID_CONS.Click += new System.EventHandler(this.ID_CONS_Click);
+            // 
+            // ID_FILE
+            // 
+            this.ID_FILE.Name = "ID_FILE";
+            this.ID_FILE.Size = new System.Drawing.Size(180, 22);
+            this.ID_FILE.Text = "Ввод из файла";
+            // 
             // ID_RED
             // 
             this.ID_RED.Name = "ID_RED";
@@ -93,6 +106,18 @@
             this.директивыРасчетаToolStripMenuItem.Name = "директивыРасчетаToolStripMenuItem";
             this.директивыРасчетаToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.директивыРасчетаToolStripMenuItem.Text = "Директивы расчета";
+            // 
+            // ID_F
+            // 
+            this.ID_F.Name = "ID_F";
+            this.ID_F.Size = new System.Drawing.Size(243, 22);
+            this.ID_F.Text = "Вид частотной характеристики";
+            // 
+            // ID_IO
+            // 
+            this.ID_IO.Name = "ID_IO";
+            this.ID_IO.Size = new System.Drawing.Size(243, 22);
+            this.ID_IO.Text = "Вх/вых узлы";
             // 
             // ID_CALC
             // 
@@ -109,31 +134,6 @@
             this.видToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.видToolStripMenuItem.Text = "Вид";
             // 
-            // ID_INTERNET
-            // 
-            this.ID_INTERNET.Name = "ID_INTERNET";
-            this.ID_INTERNET.Size = new System.Drawing.Size(181, 22);
-            this.ID_INTERNET.Text = "Интернет";
-            // 
-            // ID_EXIT
-            // 
-            this.ID_EXIT.Name = "ID_EXIT";
-            this.ID_EXIT.Size = new System.Drawing.Size(181, 22);
-            this.ID_EXIT.Text = "Выход";
-            this.ID_EXIT.Click += new System.EventHandler(this.ID_EXIT_Click);
-            // 
-            // ID_F
-            // 
-            this.ID_F.Name = "ID_F";
-            this.ID_F.Size = new System.Drawing.Size(243, 22);
-            this.ID_F.Text = "Вид частотной характеристики";
-            // 
-            // ID_IO
-            // 
-            this.ID_IO.Name = "ID_IO";
-            this.ID_IO.Size = new System.Drawing.Size(243, 22);
-            this.ID_IO.Text = "Вх/вых узлы";
-            // 
             // ID_PRIV
             // 
             this.ID_PRIV.Name = "ID_PRIV";
@@ -146,17 +146,18 @@
             this.ID_SYS.Size = new System.Drawing.Size(196, 22);
             this.ID_SYS.Text = "Системный браузер";
             // 
-            // ID_CONS
+            // ID_INTERNET
             // 
-            this.ID_CONS.Name = "ID_CONS";
-            this.ID_CONS.Size = new System.Drawing.Size(177, 22);
-            this.ID_CONS.Text = "Ввод с клавиатуры";
+            this.ID_INTERNET.Name = "ID_INTERNET";
+            this.ID_INTERNET.Size = new System.Drawing.Size(181, 22);
+            this.ID_INTERNET.Text = "Интернет";
             // 
-            // ID_FILE
+            // ID_EXIT
             // 
-            this.ID_FILE.Name = "ID_FILE";
-            this.ID_FILE.Size = new System.Drawing.Size(177, 22);
-            this.ID_FILE.Text = "Ввод из файла";
+            this.ID_EXIT.Name = "ID_EXIT";
+            this.ID_EXIT.Size = new System.Drawing.Size(181, 22);
+            this.ID_EXIT.Text = "Выход";
+            this.ID_EXIT.Click += new System.EventHandler(this.ID_EXIT_Click);
             // 
             // Form1
             // 

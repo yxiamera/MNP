@@ -7,3 +7,14 @@ C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.Properties.Resources.resources
 C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.csproj.GenerateResource.Cache
 C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.exe
 C:\Users\Stud\Desktop\MNP\MNP\obj\Debug\MNP.pdb
+C:\Users\User\Documents\GitHub\MNP\MNP\bin\Debug\MNP.exe.config
+C:\Users\User\Documents\GitHub\MNP\MNP\bin\Debug\MNP.exe
+C:\Users\User\Documents\GitHub\MNP\MNP\bin\Debug\MNP.pdb
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.Form1.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.SIZE.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.exe
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.pdb

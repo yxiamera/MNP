@@ -21,5 +21,22 @@ namespace MNP
         {
             this.Close();
         }
+
+        private void ID_CONS_Click(object sender, EventArgs e)
+        {
+            //открываем форму SIZE
+            SIZE size = new SIZE();
+            size.ShowDialog(this);
+            size.Dispose();
+
+            //открываем форму редактрирования характеристик резисторов
+            if (GV.resistorsValue > 0)
+            {
+                R ir = new R();
+                ir.ShowDialog(this);
+                ir.Dispose();
+            }
+        }
+
     }
 }

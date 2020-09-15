@@ -28,43 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.m_nodesValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.OK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.m_resistorsValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.m_capasitorsValue = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.m_inductorsValue = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.m_VolContCurSources = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.m_VolContVolSources = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.m_CurContCurSources = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.m_CurContVolSources = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.m_biPolarTransistors = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.m_uniPolarTransistors = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.m_opAmps = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.m_transformers = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.m_idealOpAmps = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.m_idealTransformers = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // m_nodesValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 20);
-            this.textBox1.TabIndex = 0;
+            this.m_nodesValue.Location = new System.Drawing.Point(13, 13);
+            this.m_nodesValue.Name = "m_nodesValue";
+            this.m_nodesValue.Size = new System.Drawing.Size(64, 20);
+            this.m_nodesValue.TabIndex = 0;
+            this.m_nodesValue.Text = "0";
             // 
             // label1
             // 
@@ -75,14 +76,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Число узлов";
             // 
-            // button1
+            // OK
             // 
-            this.button1.Location = new System.Drawing.Point(222, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Ок";
-            this.button1.UseVisualStyleBackColor = true;
+            this.OK.Location = new System.Drawing.Point(222, 278);
+            this.OK.Name = "OK";
+            this.OK.Size = new System.Drawing.Size(75, 23);
+            this.OK.TabIndex = 2;
+            this.OK.Text = "OK";
+            this.OK.UseVisualStyleBackColor = true;
+            this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
             // label2
             // 
@@ -93,12 +95,13 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Резисторы";
             // 
-            // textBox2
+            // m_resistorsValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(64, 20);
-            this.textBox2.TabIndex = 3;
+            this.m_resistorsValue.Location = new System.Drawing.Point(12, 48);
+            this.m_resistorsValue.Name = "m_resistorsValue";
+            this.m_resistorsValue.Size = new System.Drawing.Size(64, 20);
+            this.m_resistorsValue.TabIndex = 3;
+            this.m_resistorsValue.Text = "0";
             // 
             // label3
             // 
@@ -109,12 +112,13 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Конденсаторы";
             // 
-            // textBox3
+            // m_capasitorsValue
             // 
-            this.textBox3.Location = new System.Drawing.Point(13, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(64, 20);
-            this.textBox3.TabIndex = 5;
+            this.m_capasitorsValue.Location = new System.Drawing.Point(13, 85);
+            this.m_capasitorsValue.Name = "m_capasitorsValue";
+            this.m_capasitorsValue.Size = new System.Drawing.Size(64, 20);
+            this.m_capasitorsValue.TabIndex = 5;
+            this.m_capasitorsValue.Text = "0";
             // 
             // label4
             // 
@@ -125,12 +129,13 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Индуктивности";
             // 
-            // textBox4
+            // m_inductorsValue
             // 
-            this.textBox4.Location = new System.Drawing.Point(13, 123);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(64, 20);
-            this.textBox4.TabIndex = 7;
+            this.m_inductorsValue.Location = new System.Drawing.Point(13, 123);
+            this.m_inductorsValue.Name = "m_inductorsValue";
+            this.m_inductorsValue.Size = new System.Drawing.Size(64, 20);
+            this.m_inductorsValue.TabIndex = 7;
+            this.m_inductorsValue.Text = "0";
             // 
             // label5
             // 
@@ -141,12 +146,13 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "ИТУН";
             // 
-            // textBox5
+            // m_VolContCurSources
             // 
-            this.textBox5.Location = new System.Drawing.Point(13, 165);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(64, 20);
-            this.textBox5.TabIndex = 9;
+            this.m_VolContCurSources.Location = new System.Drawing.Point(13, 165);
+            this.m_VolContCurSources.Name = "m_VolContCurSources";
+            this.m_VolContCurSources.Size = new System.Drawing.Size(64, 20);
+            this.m_VolContCurSources.TabIndex = 9;
+            this.m_VolContCurSources.Text = "0";
             // 
             // label6
             // 
@@ -157,12 +163,13 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "ИНУН";
             // 
-            // textBox6
+            // m_VolContVolSources
             // 
-            this.textBox6.Location = new System.Drawing.Point(13, 204);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(64, 20);
-            this.textBox6.TabIndex = 11;
+            this.m_VolContVolSources.Location = new System.Drawing.Point(13, 204);
+            this.m_VolContVolSources.Name = "m_VolContVolSources";
+            this.m_VolContVolSources.Size = new System.Drawing.Size(64, 20);
+            this.m_VolContVolSources.TabIndex = 11;
+            this.m_VolContVolSources.Text = "0";
             // 
             // label7
             // 
@@ -173,12 +180,13 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "ИТУТ";
             // 
-            // textBox7
+            // m_CurContCurSources
             // 
-            this.textBox7.Location = new System.Drawing.Point(13, 244);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(64, 20);
-            this.textBox7.TabIndex = 13;
+            this.m_CurContCurSources.Location = new System.Drawing.Point(13, 244);
+            this.m_CurContCurSources.Name = "m_CurContCurSources";
+            this.m_CurContCurSources.Size = new System.Drawing.Size(64, 20);
+            this.m_CurContCurSources.TabIndex = 13;
+            this.m_CurContCurSources.Text = "0";
             // 
             // label8
             // 
@@ -189,12 +197,13 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "ИНУТ";
             // 
-            // textBox8
+            // m_CurContVolSources
             // 
-            this.textBox8.Location = new System.Drawing.Point(13, 285);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(64, 20);
-            this.textBox8.TabIndex = 15;
+            this.m_CurContVolSources.Location = new System.Drawing.Point(13, 285);
+            this.m_CurContVolSources.Name = "m_CurContVolSources";
+            this.m_CurContVolSources.Size = new System.Drawing.Size(64, 20);
+            this.m_CurContVolSources.TabIndex = 15;
+            this.m_CurContVolSources.Text = "0";
             // 
             // label9
             // 
@@ -205,12 +214,13 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "б/п транзисторы";
             // 
-            // textBox9
+            // m_biPolarTransistors
             // 
-            this.textBox9.Location = new System.Drawing.Point(181, 16);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(64, 20);
-            this.textBox9.TabIndex = 17;
+            this.m_biPolarTransistors.Location = new System.Drawing.Point(181, 16);
+            this.m_biPolarTransistors.Name = "m_biPolarTransistors";
+            this.m_biPolarTransistors.Size = new System.Drawing.Size(64, 20);
+            this.m_biPolarTransistors.TabIndex = 17;
+            this.m_biPolarTransistors.Text = "0";
             // 
             // label10
             // 
@@ -221,12 +231,13 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "у/п транзисторы";
             // 
-            // textBox10
+            // m_uniPolarTransistors
             // 
-            this.textBox10.Location = new System.Drawing.Point(181, 53);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(64, 20);
-            this.textBox10.TabIndex = 19;
+            this.m_uniPolarTransistors.Location = new System.Drawing.Point(181, 53);
+            this.m_uniPolarTransistors.Name = "m_uniPolarTransistors";
+            this.m_uniPolarTransistors.Size = new System.Drawing.Size(64, 20);
+            this.m_uniPolarTransistors.TabIndex = 19;
+            this.m_uniPolarTransistors.Text = "0";
             // 
             // label11
             // 
@@ -237,12 +248,13 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Опер. усилители";
             // 
-            // textBox11
+            // m_opAmps
             // 
-            this.textBox11.Location = new System.Drawing.Point(181, 91);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(64, 20);
-            this.textBox11.TabIndex = 21;
+            this.m_opAmps.Location = new System.Drawing.Point(181, 91);
+            this.m_opAmps.Name = "m_opAmps";
+            this.m_opAmps.Size = new System.Drawing.Size(64, 20);
+            this.m_opAmps.TabIndex = 21;
+            this.m_opAmps.Text = "0";
             // 
             // label12
             // 
@@ -253,12 +265,13 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Трансформаторы";
             // 
-            // textBox12
+            // m_transformers
             // 
-            this.textBox12.Location = new System.Drawing.Point(181, 133);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(64, 20);
-            this.textBox12.TabIndex = 23;
+            this.m_transformers.Location = new System.Drawing.Point(181, 133);
+            this.m_transformers.Name = "m_transformers";
+            this.m_transformers.Size = new System.Drawing.Size(64, 20);
+            this.m_transformers.TabIndex = 23;
+            this.m_transformers.Text = "0";
             // 
             // label13
             // 
@@ -269,12 +282,13 @@
             this.label13.TabIndex = 26;
             this.label13.Text = "Ид. опер. усилители";
             // 
-            // textBox13
+            // m_idealOpAmps
             // 
-            this.textBox13.Location = new System.Drawing.Point(181, 172);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(64, 20);
-            this.textBox13.TabIndex = 25;
+            this.m_idealOpAmps.Location = new System.Drawing.Point(181, 172);
+            this.m_idealOpAmps.Name = "m_idealOpAmps";
+            this.m_idealOpAmps.Size = new System.Drawing.Size(64, 20);
+            this.m_idealOpAmps.TabIndex = 25;
+            this.m_idealOpAmps.Text = "0";
             // 
             // label14
             // 
@@ -285,12 +299,13 @@
             this.label14.TabIndex = 28;
             this.label14.Text = "Ид. трансформаторы";
             // 
-            // textBox14
+            // m_idealTransformers
             // 
-            this.textBox14.Location = new System.Drawing.Point(181, 212);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(64, 20);
-            this.textBox14.TabIndex = 27;
+            this.m_idealTransformers.Location = new System.Drawing.Point(181, 212);
+            this.m_idealTransformers.Name = "m_idealTransformers";
+            this.m_idealTransformers.Size = new System.Drawing.Size(64, 20);
+            this.m_idealTransformers.TabIndex = 27;
+            this.m_idealTransformers.Text = "0";
             // 
             // SIZE
             // 
@@ -298,34 +313,34 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 317);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.m_idealTransformers);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.m_idealOpAmps);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.m_transformers);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.m_opAmps);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.m_uniPolarTransistors);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.m_biPolarTransistors);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.m_CurContVolSources);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.m_CurContCurSources);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.m_VolContVolSources);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.m_VolContCurSources);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.m_inductorsValue);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.m_capasitorsValue);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.m_resistorsValue);
+            this.Controls.Add(this.OK);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.m_nodesValue);
             this.Name = "SIZE";
             this.Text = "SIZE";
             this.ResumeLayout(false);
@@ -335,34 +350,34 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox m_nodesValue;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button OK;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox m_resistorsValue;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox m_capasitorsValue;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox m_inductorsValue;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox m_VolContCurSources;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox m_VolContVolSources;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox m_CurContCurSources;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox m_CurContVolSources;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox m_biPolarTransistors;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox m_uniPolarTransistors;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox m_opAmps;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox m_transformers;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox m_idealOpAmps;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox m_idealTransformers;
     }
 }
