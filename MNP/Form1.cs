@@ -36,6 +36,22 @@ namespace MNP
                 ir.ShowDialog(this);
                 ir.Dispose();
             }
+
+            //открываем форму редактрирования характеристик индуктивностей
+            if (GV.inductorsValue > 0)
+            {
+                L il = new L();
+                il.ShowDialog(this);
+                il.Dispose();
+            }
+
+            //открываем форму редактрирования характеристик конденсаторов
+            if (GV.capasitorsValue > 0)
+            {
+                C ic = new C();
+                ic.ShowDialog(this);
+                ic.Dispose();
+            }
         }
 
     }

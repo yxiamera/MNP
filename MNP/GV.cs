@@ -21,5 +21,16 @@ namespace MNP
         //номинал
         public static float[] z_r = new float[MR + 1];
 
+        //массивы индуктивностей
+        //полюса
+        public static int[,] in_l = new int[ML + 1, 2];
+        //номинал
+        public static float[] z_l = new float[ML + 1];
+
+        //массивы конденсаторов
+        //полюса
+        public static int[,] in_c = new int[MC + 1, 2];
+        //номинал
+        public static float[] z_c = new float[MC + 1];
     }
 }
