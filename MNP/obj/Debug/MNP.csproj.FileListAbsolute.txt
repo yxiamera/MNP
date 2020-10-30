@@ -31,3 +31,7 @@ G:\7301, 7302\MNP\MNP\obj\Debug\MNP.SIZE.resources
 G:\7301, 7302\MNP\MNP\obj\Debug\MNP.csproj.GenerateResource.Cache
 G:\7301, 7302\MNP\MNP\obj\Debug\MNP.C.resources
 G:\7301, 7302\MNP\MNP\obj\Debug\MNP.L.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.C.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.L.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.R.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.RED.resources

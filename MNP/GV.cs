@@ -13,7 +13,7 @@ namespace MNP
         //количество элементов, получаемых из формы SIZE
         public static int nodesValue, resistorsValue, capasitorsValue, inductorsValue,
             VoltContCurSources, VoltContVoltSources, CurContCurSources, CurContVoltSources,
-            biPolarTransistors, uniPolarTransistors, opAmps, transformers, idealOpAmps, idealTransformers;
+            biPolarTransistors, uniPolarTransistors, opAmps, transformers, idealOpAmps, idealTransformers, k;
 
         //массивы резисторов
         //полюса

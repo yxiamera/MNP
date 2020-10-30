@@ -73,6 +73,12 @@
     <Compile Include="R.Designer.cs">
       <DependentUpon>R.cs</DependentUpon>
     </Compile>
+    <Compile Include="RED.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RED.Designer.cs">
+      <DependentUpon>RED.cs</DependentUpon>
+    </Compile>
     <Compile Include="SIZE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <EmbeddedResource Include="R.resx">
       <DependentUpon>R.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RED.resx">
+      <DependentUpon>RED.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SIZE.resx">
       <DependentUpon>SIZE.cs</DependentUpon>
