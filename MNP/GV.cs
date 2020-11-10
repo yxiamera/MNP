@@ -15,6 +15,10 @@ namespace MNP
             VoltContCurSources, VoltContVoltSources, CurContCurSources, CurContVoltSources,
             biPolarTransistors, uniPolarTransistors, opAmps, transformers, idealOpAmps, idealTransformers, k;
 
+        public static int nf, lp, lm, kp, km;
+
+        public static String filename;
+
         //массивы резисторов
         //полюса
         public static int[,] in_r = new int[MR + 1, 2];
@@ -32,5 +36,8 @@ namespace MNP
         public static int[,] in_c = new int[MC + 1, 2];
         //номинал
         public static float[] z_c = new float[MC + 1];
+
+        //массив частот
+        public static float[] frequences = new float[MF + 1];
     }
 }
