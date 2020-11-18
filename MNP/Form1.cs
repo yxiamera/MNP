@@ -24,17 +24,6 @@ namespace MNP
 
         private void ID_CONS_Click(object sender, EventArgs e)
         {
-            //спрашиваем пользователя о необходимости использовать файл
-            DialogResult res = MessageBox.Show("Выводить описание схемы в файл?",
-                "Вывод в файл", MessageBoxButtons.YesNo);
-            if (res == DialogResult.Yes)
-            {
-                FILE ofile = new FILE();
-                GV.k = 0;
-                ofile.ShowDialog(this);
-                ofile.Dispose();
-            }
-
             //открываем форму SIZE
             SIZE size = new SIZE();
             size.ShowDialog(this);
@@ -68,6 +57,17 @@ namespace MNP
             F f = new F();
             f.ShowDialog(this);
             f.Dispose();
+
+            //спрашиваем пользователя о необходимости использовать файл
+            DialogResult res = MessageBox.Show("Выводить описание схемы в файл?",
+                "Вывод в файл", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                FILE ofile = new FILE();
+                GV.k = 0;
+                ofile.ShowDialog(this);
+                ofile.Dispose();
+            }
         }
 
         private void ID_RED_Click(object sender, EventArgs e)
@@ -80,6 +80,11 @@ namespace MNP
         private void ID_FILE_Click(object sender, EventArgs e)
         {
             GV.k = 1;
+
+            F f = new F();
+            f.ShowDialog(this);
+            f.Dispose();
+
             FILE file = new FILE();
             try
             {
@@ -91,10 +96,6 @@ namespace MNP
                 return;
             }
             file.Dispose();
-
-            F f = new F();
-            f.ShowDialog(this);
-            f.Dispose();
         }
 
         private void ID_F_Click(object sender, EventArgs e)
