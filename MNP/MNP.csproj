@@ -52,6 +52,18 @@
     <Compile Include="C.Designer.cs">
       <DependentUpon>C.cs</DependentUpon>
     </Compile>
+    <Compile Include="F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F.Designer.cs">
+      <DependentUpon>F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FILE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FILE.Designer.cs">
+      <DependentUpon>FILE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +71,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GV.cs" />
+    <Compile Include="IO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IO.Designer.cs">
+      <DependentUpon>IO.cs</DependentUpon>
+    </Compile>
     <Compile Include="L.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +106,17 @@
     <EmbeddedResource Include="C.resx">
       <DependentUpon>C.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F.resx">
+      <DependentUpon>F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FILE.resx">
+      <DependentUpon>FILE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IO.resx">
+      <DependentUpon>IO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="L.resx">
       <DependentUpon>L.cs</DependentUpon>
