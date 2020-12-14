@@ -71,6 +71,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GV.cs" />
+    <Compile Include="INT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INT.Designer.cs">
+      <DependentUpon>INT.cs</DependentUpon>
+    </Compile>
     <Compile Include="IO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INT.resx">
+      <DependentUpon>INT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IO.resx">
       <DependentUpon>IO.cs</DependentUpon>

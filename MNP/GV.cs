@@ -39,5 +39,8 @@ namespace MNP
 
         //массив частот
         public static float[] frequences = new float[MF + 1];
+
+        //флаг для выбора браузера
+        public static bool flag;
     }
 }

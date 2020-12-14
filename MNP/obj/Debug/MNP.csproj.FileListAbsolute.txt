@@ -38,3 +38,4 @@ C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.RED.resources
 C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.F.resources
 C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.FILE.resources
 C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.IO.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.INT.resources
