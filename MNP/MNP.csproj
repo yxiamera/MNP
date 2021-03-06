@@ -52,6 +52,8 @@
     <Compile Include="C.Designer.cs">
       <DependentUpon>C.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calculations.cs" />
+    <Compile Include="Complex.cs" />
     <Compile Include="F.cs">
       <SubType>Form</SubType>
     </Compile>
