@@ -16,6 +16,11 @@ namespace MNP
             VoltContrCurSources, VoltContrVoltSources, CurContrCurSources, CurContrVoltSources,
             biPolarTransistors, uniPolarTransistors, opAmps, transformers, idealOpAmps, idealTransformers, k;
 
+        //вещественные матрицы
+        public static double[,] a = new double[M + 1, M + 1];
+        public static double[,] b = new double[M + 1, M + 1];
+        public static double om;
+
         public static int nf, lp, lm, kp, km;
 
         public static String filename;

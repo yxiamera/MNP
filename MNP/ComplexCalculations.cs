@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MNP
 {
     //все расчеты схем
-    class Calculations
+    class ComplexCalculations
     {
         void form_d(ref int[,] in_d, ref float[] z_d, int nd, char td)
         {
@@ -37,6 +37,7 @@ namespace MNP
                     }
                 }
         }
+ 
         //Формирование комплексных частных матриц ИТУН 
         void form_ju()
         {
@@ -82,6 +83,7 @@ namespace MNP
             }
             GV.n += GV.VoltContrVoltSources;
         }
+
         //Формирование комплексных частных матриц ИТУТ
         void form_ji()
         {
@@ -108,6 +110,7 @@ namespace MNP
             }
             GV.n += GV.CurContrCurSources;
         }
+
         //Формирование комплексных частных матриц ИНУТ
         void form_ei()
         {
@@ -116,7 +119,7 @@ namespace MNP
             {
                 i1 = GV.n + kei;
                 i2 = i1 + GV.CurContrVoltSources;
-                GV.w[i2, i1] = new Complex(GV.z_CCVS[kei, 0]);
+                GV.w[i2, i1] = new Complex(GV.z_CCVS[kei, 0], 0);
                 for (int m = 0; m <= 3; m++)
                 {
                     j = GV.in_CCVS[kei, m];
@@ -137,6 +140,7 @@ namespace MNP
             }
             GV.n += 2 * GV.CurContrVoltSources;
         }
+
         //Формирование комплексных частных матриц частотно-зависимых ИТУН
         void form_ju_c()
         {
@@ -159,6 +163,7 @@ namespace MNP
                 }
             }
         }
+
         //Формирование комплексных частных матриц частотно-зависимых ИНУН
         void form_eu_c()
         {
@@ -187,6 +192,7 @@ namespace MNP
             }
             GV.n += GV.VoltContrVoltSources;
         }
+
         //Формирование комплексных частных матриц частотно-зависимых ИНУТ
         void form_ei_c()
         {
@@ -218,6 +224,7 @@ namespace MNP
             }
             GV.n += 2 * GV.CurContrVoltSources;
         }
+
         //Формирование комплексных частных матриц частотно-зависимых ИТУТ
         void form_ji_c()
         {
@@ -246,6 +253,7 @@ namespace MNP
             }
             GV.n += GV.CurContrCurSources;
         }
+
         //Формирование комплексных частных матриц идеального ОУ
         void form_oui()
         {
@@ -254,7 +262,7 @@ namespace MNP
             {
                 j1 = GV.n + koui;
                 j2 = j1 + GV.idealOpAmps;
-                GV.w[j2, j1] = new Complex(-1);
+                GV.w[j2, j1] = new Complex(-1, 0);
                 for (int l = 0; l <= 3; l++)
                 {
                     i = GV.in_IOA[koui, l];
@@ -274,6 +282,7 @@ namespace MNP
             }
             GV.n += 2 * GV.idealOpAmps;
         }
+
         //Формирование комплексных частных матриц идеального трансформатора
         void form_tri()
         {
@@ -301,6 +310,7 @@ namespace MNP
             }
             GV.n += GV.idealTransformers;
         }
+
         //Формированне комплексных частных матриц трансформатора
         void form_tr()
         {
@@ -333,6 +343,7 @@ namespace MNP
             }
             GV.n += 2 * GV.transformers;
         }
+
         //Формирование комплексных частных матриц биполярного транзистора
         void form_tb()
         {
@@ -386,6 +397,7 @@ namespace MNP
                 }
             }
         }
+
         //Формирование комплексных частных униполярного транзистора
         void form_tu()
         {
@@ -436,6 +448,7 @@ namespace MNP
                 }
             }
         }
+
         //Формирование комплексных частных матриц операционного усилителя
         void form_ou()
         {
@@ -486,16 +499,28 @@ namespace MNP
             }
         }
 
+        void form_w()
+        {
+            int i, j;
+            double t;
+            for (i = 1; i <= GV.n; i++)
+                for (j = 1; j <= GV.n; j++)
+                {
+                    t = GV.b[i, j];
+                    if (t != 0) t *= GV.om;
+                    GV.w[i, j] = new Complex(GV.a[i, j], t);
+                }
+        }
+
         void form_s()
         {
             for (int i = 1; i <= GV.M; i++)
                 GV.w[i, 0] = new Complex();
             if (GV.lp != 0)
-                GV.w[GV.lp, 0] = new Complex(-1);
+                GV.w[GV.lp, 0] = new Complex(-1, 0);
             if (GV.lm != 0)
-                GV.w[GV.lm, 0] = new Complex(1);
+                GV.w[GV.lm, 0] = new Complex(1, 0);
         }
-
 
         private void OnCalc()
         {
