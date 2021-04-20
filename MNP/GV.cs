@@ -27,7 +27,7 @@ namespace MNP
 
         //матрицы расчета
         public static Complex s;
-        public static Complex[,] w = new Complex[M + 1, M +1 ];
+        public static Complex[,] w = new Complex[M + 1, M + 1];
         //массивы резисторов
         //полюса
         public static int[,] in_r = new int[MR + 1, 2];
@@ -59,12 +59,12 @@ namespace MNP
         //массивы ИТУТ
         public static int[,] in_CCCS = new int[MJI + 1, 4];
         //номинал
-        public static float[,] z_CCCS = new float[MJI + 1, 3];
+        public static float[] z_CCCS = new float[MJI + 1];
 
         //массивы ИНУТ
         public static int[,] in_CCVS = new int[MEI + 1, 4];
         //номинал
-        public static float[,] z_CCVS = new float[MEI + 1, 3];
+        public static float[] z_CCVS = new float[MEI + 1];
 
         //массив ИОУ
         public static int[,] in_IOA = new int[MOUI + 1, 4];
@@ -97,6 +97,13 @@ namespace MNP
 
         //массив частот
         public static float[] frequences = new float[MF + 1];
+
+        public static float[] kum = new float [MF + 1];
+        public static float[] kua = new float [MF + 1];
+        public static float[] rim = new float [MF + 1];
+        public static float[] ria = new float [MF + 1];
+        public static float[] rom = new float [MF + 1];
+        public static float[] roa = new float [MF + 1];
 
         //комплексные величины
 

@@ -39,3 +39,7 @@ C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.F.resources
 C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.FILE.resources
 C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.IO.resources
 C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.INT.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.EI.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.EU.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.OUI.resources
+C:\Users\User\Documents\GitHub\MNP\MNP\obj\Debug\MNP.TU.resources

@@ -59,9 +59,61 @@ namespace MNP
                 int idx = m_redlst.SelectedIndex;
                 switch (idx)
                 {
-                    case 0:
-                    case 1:
-                    case 2:
+                    case 0: //резисторы
+                        i1 = "n+";
+                        i2 = "n-";
+                        i3 = "КОм";
+
+                        IDC_NP2_STATIC.Text = i1;
+                        IDC_NM2_STATIC.Text = i2;
+                        IDC_Z1_STATIC.Text = i3;
+
+                        m_np1.Hide();
+                        m_nm1.Hide();
+                        m_z2.Hide();
+                        m_z3.Hide();
+                        m_z4.Hide();
+                        m_z5.Hide();
+                        m_z6.Hide();
+
+                        IDC_NP1_STATIC.Hide();
+                        IDC_NM1_STATIC.Hide();
+                        IDC_Z2_STATIC.Hide();
+                        IDC_Z3_STATIC.Hide();
+                        IDC_Z4_STATIC.Hide();
+                        IDC_Z5_STATIC.Hide();
+                        IDC_Z6_STATIC.Hide();
+
+                        m_n.Focus();
+                        break;
+                    case 1: //конеденсаторы
+                        i1 = "n+";
+                        i2 = "n-";
+                        i3 = "мкФ";
+
+                        IDC_NP2_STATIC.Text = i1;
+                        IDC_NM2_STATIC.Text = i2;
+                        IDC_Z1_STATIC.Text = i3;
+
+                        m_np1.Hide();
+                        m_nm1.Hide();
+                        m_z2.Hide();
+                        m_z3.Hide();
+                        m_z4.Hide();
+                        m_z5.Hide();
+                        m_z6.Hide();
+
+                        IDC_NP1_STATIC.Hide();
+                        IDC_NM1_STATIC.Hide();
+                        IDC_Z2_STATIC.Hide();
+                        IDC_Z3_STATIC.Hide();
+                        IDC_Z4_STATIC.Hide();
+                        IDC_Z5_STATIC.Hide();
+                        IDC_Z6_STATIC.Hide();
+
+                        m_n.Focus();
+                        break;
+                    case 2: //индуктивности
                         i1 = "n+";
                         i2 = "n-";
                         i3 = "Значение";
@@ -89,8 +141,113 @@ namespace MNP
                         m_n.Focus();
 
                         break;
-                }
+                    case 6: //ИНУН
+                        i1 = "n1+";
+                        i2 = "n1-";
+                        i3 = "n2+";
+                        i4 = "n2-";
+                        i5 = "mu";
+                        i6 = "T1";
+                        i7 = "T2";
 
+                        IDC_NP1_STATIC.Text = i1;
+                        IDC_NM1_STATIC.Text = i2;
+                        IDC_NP2_STATIC.Text = i3;
+                        IDC_NM2_STATIC.Text = i4;
+                        IDC_Z1_STATIC.Text = i5;
+                        IDC_Z2_STATIC.Text = i6;
+                        IDC_Z3_STATIC.Text = i7;
+
+                        m_z4.Hide();
+                        m_z5.Hide();
+                        m_z6.Hide();
+
+                        IDC_Z4_STATIC.Hide();
+                        IDC_Z5_STATIC.Hide();
+                        IDC_Z6_STATIC.Hide();
+                        m_n.Focus();
+                        break;
+
+                    case 5: //ИНУТ
+                        i1 = "n1+";
+                        i2 = "n1-";
+                        i3 = "n2+";
+                        i4 = "n2-";
+                        i7 = "betta";
+
+                        IDC_NP1_STATIC.Text = i1;
+                        IDC_NM1_STATIC.Text = i2;
+                        IDC_NP2_STATIC.Text = i3;
+                        IDC_NM2_STATIC.Text = i4;
+                        IDC_Z1_STATIC.Text = i7;
+
+                        m_z2.Hide();
+                        m_z3.Hide();
+                        m_z4.Hide();
+                        m_z5.Hide();
+                        m_z6.Hide();
+
+                        IDC_Z2_STATIC.Hide();
+                        IDC_Z3_STATIC.Hide();
+                        IDC_Z4_STATIC.Hide();
+                        IDC_Z5_STATIC.Hide();
+                        IDC_Z6_STATIC.Hide();
+                        m_n.Focus();
+                        break;
+                    case 11: //ИОУ
+                        i1 = "n1+";
+                        i2 = "n1-";
+                        i3 = "n2+";
+                        i4 = "n2-";
+
+                        IDC_NP1_STATIC.Text = i1;
+                        IDC_NM1_STATIC.Text = i2;
+                        IDC_NP2_STATIC.Text = i3;
+                        IDC_NM2_STATIC.Text = i4;
+
+                        m_z1.Hide();
+                        m_z2.Hide();
+                        m_z3.Hide();
+                        m_z4.Hide();
+                        m_z5.Hide();
+                        m_z6.Hide();
+
+                        IDC_Z1_STATIC.Hide();
+                        IDC_Z2_STATIC.Hide();
+                        IDC_Z3_STATIC.Hide();
+                        IDC_Z4_STATIC.Hide();
+                        IDC_Z5_STATIC.Hide();
+                        IDC_Z6_STATIC.Hide();
+
+                        m_n.Focus();
+                        break;
+                    case 8: //Униполярные транзисторы
+                        i1 = "Затвор";
+                        i2 = "Сток";
+                        i3 = "Исток";
+                        i5 = "Rc";
+                        i6 = "Czi";
+                        i7 = "Czs";
+                        i8 = "Csi";
+                        i9 = "S";
+
+                        IDC_NP1_STATIC.Text = i1;
+                        IDC_NM1_STATIC.Text = i2;
+                        IDC_NP2_STATIC.Text = i3;
+                        IDC_Z1_STATIC.Text = i5;
+                        IDC_Z2_STATIC.Text = i6;
+                        IDC_Z3_STATIC.Text = i7;
+                        IDC_Z4_STATIC.Text = i8;
+                        IDC_Z5_STATIC.Text = i9;
+
+                        m_nm2.Hide();
+                        m_z6.Hide();
+                        IDC_NM2_STATIC.Hide();
+                        IDC_Z6_STATIC.Hide();
+
+                        m_n.Focus();
+                        break;
+                }
             }
         }
 
@@ -157,6 +314,105 @@ namespace MNP
                         m_z1.Text = GV.z_l[GV.k].ToString();
                         IDC_IN_BUTTON.Enabled = true;
                     }
+                    break;
+
+                case 6:
+                    try
+                    {
+                        GV.in_VCVS[GV.k, 0] = int.Parse(m_np1.Text);
+                        GV.in_VCVS[GV.k, 1] = int.Parse(m_nm1.Text);
+                        GV.in_VCVS[GV.k, 2] = int.Parse(m_np2.Text);
+                        GV.in_VCVS[GV.k, 3] = int.Parse(m_nm2.Text);
+                        GV.z_VCVS[GV.k, 2] = float.Parse(m_z1.Text);
+                        GV.z_VCVS[GV.k, 0] = float.Parse(m_z2.Text);
+                        GV.z_VCVS[GV.k, 1] = float.Parse(m_z3.Text);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+
+                    if ((GV.in_VCVS[GV.k, 0] < 0) || (GV.in_VCVS[GV.k, 1] < 0) || (GV.z_VCVS[GV.k, 0] < 0)
+                        || (GV.in_VCVS[GV.k, 2] < 0) || (GV.in_VCVS[GV.k, 3] < 0) || (GV.z_VCVS[GV.k, 1] < 0)
+                        || (GV.z_VCVS[GV.k, 2] < 0))
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+
+                    break;
+                case 5:
+                    try
+                    {
+                        GV.in_CCVS[GV.k, 0] = int.Parse(m_np1.Text);
+                        GV.in_CCVS[GV.k, 1] = int.Parse(m_nm1.Text);
+                        GV.in_CCVS[GV.k, 2] = int.Parse(m_np2.Text);
+                        GV.in_CCVS[GV.k, 3] = int.Parse(m_nm2.Text);
+                        GV.z_CCVS[GV.k] = float.Parse(m_z1.Text);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+
+                    if ((GV.in_CCVS[GV.k, 0] < 0) || (GV.in_CCVS[GV.k, 1] < 0) || (GV.z_CCVS[GV.k] < 0)
+                        || (GV.in_CCVS[GV.k, 2] < 0) || (GV.in_CCVS[GV.k, 3] < 0))
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+
+                    break;
+                case 9:
+                    try
+                    {
+                        GV.in_IOA[GV.k, 0] = int.Parse(m_np1.Text);
+                        GV.in_IOA[GV.k, 1] = int.Parse(m_nm1.Text);
+                        GV.in_IOA[GV.k, 2] = int.Parse(m_np2.Text);
+                        GV.in_IOA[GV.k, 3] = int.Parse(m_nm2.Text);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+
+                    if ((GV.in_IOA[GV.k, 0] < 0) || (GV.in_IOA[GV.k, 1] < 0)
+                                                 || (GV.in_IOA[GV.k, 2] < 0) || (GV.in_IOA[GV.k, 3] < 0))
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+
+                    break;
+                case 8:
+                    try
+                    {
+                        GV.in_tu[GV.k, 0] = int.Parse(m_np1.Text);
+                        GV.in_tu[GV.k, 1] = int.Parse(m_nm1.Text);
+                        GV.in_tu[GV.k, 2] = int.Parse(m_np2.Text);
+                        GV.z_tu[GV.k, 0] = float.Parse(m_z1.Text);
+                        GV.z_tu[GV.k, 1] = float.Parse(m_z2.Text);
+                        GV.z_tu[GV.k, 2] = float.Parse(m_z3.Text);
+                        GV.z_tu[GV.k, 3] = float.Parse(m_z4.Text);
+                        GV.z_tu[GV.k, 4] = float.Parse(m_z5.Text);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+
+                    if ((GV.in_tu[GV.k, 0] < 0) || (GV.in_tu[GV.k, 1] < 0) || (GV.z_tu[GV.k, 0] < 0)
+                        || (GV.in_tu[GV.k, 2] < 0) || (GV.z_tu[GV.k, 1] < 0) || (GV.z_tu[GV.k, 2] < 0) ||
+                        (GV.z_tu[GV.k, 3] < 0) || (GV.z_tu[GV.k, 4] < 0))
+                    {
+                        MessageBox.Show("Введены неправильные значения");
+                        return;
+                    }
+
                     break;
             }
             OK.Focus();
