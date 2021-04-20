@@ -45,289 +45,241 @@ namespace MNP
             this.Close();
         }
 
-        //добавить проверку
-        private void fileout(String filename)      //Вывод описания схемы в файл
+        private void fileout(String filename)
         {
             StreamWriter fout = new StreamWriter(GV.filename);
             String str = "";
             int i;
-            str = GV.nodesValue.ToString() + " " + GV.resistorsValue.ToString()
-            + " " + GV.capasitorsValue.ToString() + " " + GV.inductorsValue.ToString();
-
+            str = GV.nodesValue.ToString() + " " + GV.resistorsValue.ToString() + " " + GV.capasitorsValue.ToString() + " " + GV.inductorsValue.ToString() + " " +
+                  GV.VoltContrVoltSources.ToString() + " " + GV.CurContrVoltSources.ToString() + " " + GV.idealOpAmps.ToString() + " " + GV.uniPolarTransistors.ToString();
             fout.WriteLine(str);
+            //for R-elements
             for (i = 1; i <= GV.resistorsValue; i++)
             {
                 str = GV.in_r[i, 0].ToString() + " " + GV.in_r[i, 1].ToString() + " "
-                    + GV.z_r[i].ToString();
+                      + GV.z_r[i].ToString();
                 fout.WriteLine(str);
             }
 
+            //for C-elements
             for (i = 1; i <= GV.capasitorsValue; i++)
             {
                 str = GV.in_c[i, 0].ToString() + " " + GV.in_c[i, 1].ToString() + " "
-                    + GV.z_c[i].ToString();
+                      + GV.z_c[i].ToString();
                 fout.WriteLine(str);
             }
 
+            //for L-elements
             for (i = 1; i <= GV.inductorsValue; i++)
             {
                 str = GV.in_l[i, 0].ToString() + " " + GV.in_l[i, 1].ToString() + " "
-                    + GV.z_l[i].ToString();
+                      + GV.z_l[i].ToString();
+                fout.WriteLine(str);
+            }
+
+            for (i = 1; i <= GV.VoltContrVoltSources; i++)
+            {
+                str = GV.in_VCVS[i, 0].ToString() + " " + GV.in_VCVS[i, 1].ToString() + " " + GV.in_VCVS[i, 2].ToString() +
+                      " " + GV.in_VCVS[i, 3].ToString() +
+                      " " + GV.z_VCVS[i, 0].ToString() + " " + GV.z_VCVS[i, 1].ToString() + " " + GV.z_VCVS[i, 2].ToString();
+                fout.WriteLine(str);
+            }
+
+            for (i = 1; i <= GV.CurContrVoltSources; i++)
+            {
+                str = GV.in_CCVS[i, 0].ToString() + " " + GV.in_CCVS[i, 1].ToString() + " " + GV.in_CCVS[i, 2].ToString() +
+                      " " + GV.in_CCVS[i, 3].ToString() + " "
+                      + GV.z_CCVS[i].ToString();
+                fout.WriteLine(str);
+            }
+
+            for (i = 1; i <= GV.idealOpAmps; i++)
+            {
+                str = GV.in_IOA[i, 0].ToString() + " " + GV.in_IOA[i, 1].ToString() + " " + GV.in_IOA[i, 2] + " " + GV.in_IOA[i, 3];
+                fout.WriteLine(str);
+            }
+
+            for (i = 1; i <= GV.uniPolarTransistors; i++)
+            {
+                str = GV.in_tu[i, 0].ToString() + " " + GV.in_tu[i, 1].ToString() + " " + GV.in_tu[i, 2].ToString() + " "
+                      + GV.z_tu[i, 0] + " "
+                      + GV.z_tu[i, 1].ToString() + " " + GV.z_tu[i, 2].ToString() + " " + GV.z_tu[i, 3].ToString() +
+                      " " + GV.z_tu[i, 4].ToString() + " ";
                 fout.WriteLine(str);
             }
 
             fout.Close();
         }
 
-
-        private void filein(String filename)      //Ввод описания схемы из файла
+        private void filein(String filename)
         {
             StreamReader fin = new StreamReader(GV.filename);
             char[] sep = { ' ' };
             string str = "";
             str = fin.ReadLine();
-            String[] s = str.Split(sep, 4); //Значение второго аргумента!!!
-
-            //количество узлов
+            String[] s;
             try
             {
-                GV.nodesValue = Int32.Parse(s[0]);
+                s = str.Split(sep, 8);
+                GV.nodesValue = int.Parse(s[0]);
+                GV.resistorsValue = int.Parse(s[1]);
+                GV.capasitorsValue = int.Parse(s[2]);
+                GV.inductorsValue = int.Parse(s[3]);
+                GV.VoltContrVoltSources = int.Parse(s[4]);
+                GV.CurContrVoltSources = int.Parse(s[5]);
+                GV.idealOpAmps = int.Parse(s[6]);
+                GV.uniPolarTransistors = int.Parse(s[7]);
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                MessageBox.Show("Ошибка: " + exception.Message + "\nКоличество узлов будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                GV.nodesValue = 1;
+                MessageBox.Show(
+                    "Ошибка в количестве элементов. Если какие-то элементы не присутствуют в схеме, то введите в первую строку файла значение 0");
+                fin.Close();
+                return;
             }
 
-            if (GV.nodesValue <= 0)
-            {
-                MessageBox.Show("Ошибка: Введенное число меньше или равно нулю" + "\nКоличество узлов будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                GV.nodesValue = 1;
-            }
-
-            //резисторы
-            try
-            {
-                GV.resistorsValue = Int32.Parse(s[1]);
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Ошибка: " + exception.Message + "\nКоличество резисторов будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                GV.resistorsValue = 0;
-            }
-
-            if (GV.resistorsValue < 0)
-            {
-                MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nКоличество резисторов будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                GV.resistorsValue = 0;
-            }
-
-            //количество конденсаторов
-            try
-            {
-                GV.capasitorsValue = Int32.Parse(s[2]);
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Ошибка: " + exception.Message + "\nКоличество конденсаторов будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                GV.capasitorsValue = 0;
-            }
-
-            if (GV.capasitorsValue < 0)
-            {
-                MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nКоличество конденсаторов будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                GV.resistorsValue = 0;
-            }
-
-            //количество индуктивностей
-            try
-            {
-                GV.inductorsValue = Int32.Parse(s[3]);
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Ошибка: " + exception.Message + "\nКоличество индуктивностей будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                GV.inductorsValue = 0;
-            }
-
-            if (GV.inductorsValue < 0)
-            {
-                MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nКоличество индуктивностей будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                GV.inductorsValue = 0;
-            }
-
-            //резисторы
             for (int i = 1; i <= GV.resistorsValue; i++)
             {
                 str = fin.ReadLine();
-                s = str.Split(sep, 3);
-
-                //n+
                 try
                 {
-                    GV.in_r[i, 0] = Int32.Parse(s[0]);
+                    s = str.Split(sep, 3);
+                    GV.in_r[i, 0] = int.Parse(s[0]);
+                    GV.in_r[i, 1] = int.Parse(s[1]);
+                    GV.z_r[i] = float.Parse(s[2]);
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
-                    MessageBox.Show("Ошибка: " + exception.Message + "\nЗначение n+ будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GV.in_r[i, 0] = 0;
-                }
-
-                if (GV.in_r[i, 0] < 0)
-                {
-                    MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nЗначение n+ будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    GV.in_r[i, 0] = 0;
-                }
-
-                //n-
-                try
-                {
-                    GV.in_r[i, 1] = Int32.Parse(s[1]);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show("Ошибка: " + exception.Message + "\nЗначение n- будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GV.in_r[i, 1] = 0;
-                }
-
-                if (GV.in_r[i, 1] < 0)
-                {
-                    MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nЗначение n- будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    GV.in_r[i, 1] = 0;
-                }
-
-                //номинал
-                try
-                {
-                    GV.z_r[i] = Single.Parse(s[2]);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show("Ошибка: " + exception.Message + "\nЗначение номинала резистора будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GV.z_r[i] = 0;
-                }
-
-                if (GV.z_r[i] < 0)
-                {
-                    MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nЗначение номинала резистора будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    GV.z_r[i] = 0;
+                    MessageBox.Show("Ошибка в введённых резисторах");
+                    fin.Close();
+                    return;
                 }
             }
 
-            //конденсаторы
             for (int i = 1; i <= GV.capasitorsValue; i++)
             {
                 str = fin.ReadLine();
-                s = str.Split(sep, 3);
-                //n+
                 try
                 {
-                    GV.in_c[i, 0] = Int32.Parse(s[0]);
+                    s = str.Split(sep, 3);
+                    GV.in_c[i, 0] = int.Parse(s[0]);
+                    GV.in_c[i, 1] = int.Parse(s[1]);
+                    GV.z_c[i] = float.Parse(s[2]);
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
-                    MessageBox.Show("Ошибка: " + exception.Message + "\nЗначение n+ будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GV.in_c[i, 0] = 0;
-                }
-
-                if (GV.in_c[i, 0] < 0)
-                {
-                    MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nЗначение n+ будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    GV.in_c[i, 0] = 0;
-                }
-
-                //n-
-                try
-                {
-                    GV.in_c[i, 1] = Int32.Parse(s[1]);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show("Ошибка: " + exception.Message + "\nЗначение n- будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GV.in_c[i, 1] = 0;
-                }
-
-                if (GV.in_c[i, 1] < 0)
-                {
-                    MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nЗначение n- будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    GV.in_c[i, 1] = 0;
-                }
-
-                //номинал
-                try
-                {
-                    GV.z_c[i] = Single.Parse(s[2]);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show("Ошибка: " + exception.Message + "\nЗначение номинала конденсатора будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GV.z_c[i] = 0;
-                }
-
-                if (GV.z_c[i] < 0)
-                {
-                    MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nЗначение номинала конденсатора будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    GV.z_c[i] = 0;
+                    MessageBox.Show("Ошибка в введённых конденсаторах");
+                    fin.Close();
+                    return;
                 }
             }
 
-            //индуктивности
             for (int i = 1; i <= GV.inductorsValue; i++)
             {
                 str = fin.ReadLine();
-                s = str.Split(sep, 3);
-                //n+
                 try
                 {
-                    GV.in_l[i, 0] = Int32.Parse(s[0]);
+                    s = str.Split(sep, 3);
+                    GV.in_l[i, 0] = int.Parse(s[0]);
+                    GV.in_l[i, 1] = int.Parse(s[1]);
+                    GV.z_l[i] = float.Parse(s[2]);
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
-                    MessageBox.Show("Ошибка: " + exception.Message + "\nЗначение n+ будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GV.in_l[i, 0] = 0;
-                }
-
-                if (GV.in_l[i, 0] < 0)
-                {
-                    MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nЗначение n+ будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    GV.in_l[i, 0] = 0;
-                }
-
-                //n-
-                try
-                {
-                    GV.in_l[i, 1] = Int32.Parse(s[1]);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show("Ошибка: " + exception.Message + "\nЗначение n- будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GV.in_l[i, 1] = 0;
-                }
-
-                if (GV.in_l[i, 1] < 0)
-                {
-                    MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nЗначение n- будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    GV.in_l[i, 1] = 0;
-                }
-
-                //номинал
-                try
-                {
-                    GV.z_l[i] = Single.Parse(s[2]);
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show("Ошибка: " + exception.Message + "\nЗначение номинала индуктивности будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    GV.z_l[i] = 0;
-                }
-
-                if (GV.z_l[i] < 0)
-                {
-                    MessageBox.Show("Ошибка: Введенное число меньше нуля" + "\nЗначение номинала индуктивности будет выставлено по умолчанию.", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    GV.z_l[i] = 0;
+                    MessageBox.Show("Ошибка в введённых катушках");
+                    fin.Close();
+                    return;
                 }
             }
 
+            for (int i = 1; i <= GV.VoltContrVoltSources; i++)
+            {
+                str = fin.ReadLine();
+                try
+                {
+                    s = str.Split(sep, 7);
+                    GV.in_VCVS[i, 0] = int.Parse(s[0]);
+                    GV.in_VCVS[i, 1] = int.Parse(s[1]);
+                    GV.in_VCVS[i, 2] = int.Parse(s[2]);
+                    GV.in_VCVS[i, 3] = int.Parse(s[3]);
+
+                    GV.z_VCVS[i, 0] = int.Parse(s[4]);
+                    GV.z_VCVS[i, 1] = int.Parse(s[5]);
+                    GV.z_VCVS[i, 2] = int.Parse(s[6]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка в введённых катушках");
+                    fin.Close();
+                    return;
+                }
+            }
+
+            for (int i = 1; i <= GV.CurContrVoltSources; i++)
+            {
+                str = fin.ReadLine();
+                try
+                {
+                    s = str.Split(sep, 5);
+                    GV.in_CCVS[i, 0] = int.Parse(s[0]);
+                    GV.in_CCVS[i, 1] = int.Parse(s[1]);
+                    GV.in_CCVS[i, 2] = int.Parse(s[2]);
+                    GV.in_CCVS[i, 3] = int.Parse(s[3]);
+
+                    GV.z_CCVS[i] = int.Parse(s[4]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка в введённых катушках");
+                    fin.Close();
+                    return;
+                }
+            }
+
+            for (var i = 1; i <= GV.idealOpAmps; i++)
+            {
+                str = fin.ReadLine();
+                try
+                {
+                    s = str.Split(sep, 4);
+                    GV.in_IOA[i, 0] = int.Parse(s[0]);
+                    GV.in_IOA[i, 1] = int.Parse(s[1]);
+                    GV.in_IOA[i, 2] = int.Parse(s[2]);
+                    GV.in_IOA[i, 3] = int.Parse(s[3]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка в введённых катушках");
+                    fin.Close();
+                    return;
+                }
+            }
+
+            for (var i = 1; i <= GV.uniPolarTransistors; i++)
+            {
+                str = fin.ReadLine();
+                try
+                {
+                    s = str.Split(sep, 8);
+                    GV.in_tu[i, 0] = int.Parse(s[0]);
+                    GV.in_tu[i, 1] = int.Parse(s[1]);
+                    GV.in_tu[i, 2] = int.Parse(s[2]);
+
+                    GV.z_tu[i, 0] = int.Parse(s[3]);
+                    GV.z_tu[i, 1] = int.Parse(s[4]);
+                    GV.z_tu[i, 2] = int.Parse(s[5]);
+                    GV.z_tu[i, 3] = int.Parse(s[6]);
+                    GV.z_tu[i, 4] = int.Parse(s[7]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка в введённых катушках");
+                    fin.Close();
+                    return;
+                }
+            }
+
+            MessageBox.Show("Значения успешно введены");
             fin.Close();
         }
     }
