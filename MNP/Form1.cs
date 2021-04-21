@@ -568,7 +568,7 @@ namespace MNP
                 {
                     str =
                         $"У/п транзисторы{ktu:D}{GV.in_tu[ktu, 0],10:D}{GV.in_tu[ktu, 1],10:D}{GV.in_tu[ktu, 2],10:D}" +
-                        $"{GV.z_tu[ktu, 0],10:F}{GV.z_tu[ktu, 1],10:F}{GV.z_tu[ktu, 2],10:F}{GV.z_tu[ktu, 3],10:F}{GV.z_tu[ktu, 4],10:F}";
+                        $"{GV.z_tu[ktu, 0],15:F}{GV.z_tu[ktu, 1],15:F8}{GV.z_tu[ktu, 2],15:F8}{GV.z_tu[ktu, 3],15:F8}{GV.z_tu[ktu, 4],15:F}";
                     fout.WriteLine(str);
                 }
             }

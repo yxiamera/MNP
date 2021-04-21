@@ -203,9 +203,9 @@ namespace MNP
                     GV.in_VCVS[i, 2] = int.Parse(s[2]);
                     GV.in_VCVS[i, 3] = int.Parse(s[3]);
 
-                    GV.z_VCVS[i, 0] = int.Parse(s[4]);
-                    GV.z_VCVS[i, 1] = int.Parse(s[5]);
-                    GV.z_VCVS[i, 2] = int.Parse(s[6]);
+                    GV.z_VCVS[i, 0] = float.Parse(s[4]);
+                    GV.z_VCVS[i, 1] = float.Parse(s[5]);
+                    GV.z_VCVS[i, 2] = float.Parse(s[6]);
                 }
                 catch (Exception)
                 {
@@ -226,7 +226,7 @@ namespace MNP
                     GV.in_CCVS[i, 2] = int.Parse(s[2]);
                     GV.in_CCVS[i, 3] = int.Parse(s[3]);
 
-                    GV.z_CCVS[i] = int.Parse(s[4]);
+                    GV.z_CCVS[i] = float.Parse(s[4]);
                 }
                 catch (Exception)
                 {
@@ -265,11 +265,11 @@ namespace MNP
                     GV.in_tu[i, 1] = int.Parse(s[1]);
                     GV.in_tu[i, 2] = int.Parse(s[2]);
 
-                    GV.z_tu[i, 0] = int.Parse(s[3]);
-                    GV.z_tu[i, 1] = int.Parse(s[4]);
-                    GV.z_tu[i, 2] = int.Parse(s[5]);
-                    GV.z_tu[i, 3] = int.Parse(s[6]);
-                    GV.z_tu[i, 4] = int.Parse(s[7]);
+                    GV.z_tu[i, 0] = float.Parse(s[3]);
+                    GV.z_tu[i, 1] = float.Parse(s[4]);
+                    GV.z_tu[i, 2] = float.Parse(s[5]);
+                    GV.z_tu[i, 3] = float.Parse(s[6]);
+                    GV.z_tu[i, 4] = float.Parse(s[7]);
                 }
                 catch (Exception)
                 {
