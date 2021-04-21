@@ -209,7 +209,7 @@ namespace MNP
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ошибка в введённых катушках");
+                    MessageBox.Show("Ошибка в введённых ИНУН");
                     fin.Close();
                     return;
                 }
@@ -230,7 +230,7 @@ namespace MNP
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ошибка в введённых катушках");
+                    MessageBox.Show("Ошибка в введённых ИТУН");
                     fin.Close();
                     return;
                 }
@@ -249,7 +249,7 @@ namespace MNP
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ошибка в введённых катушках");
+                    MessageBox.Show("Ошибка в введённых ИОА");
                     fin.Close();
                     return;
                 }
@@ -273,7 +273,7 @@ namespace MNP
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ошибка в введённых катушках");
+                    MessageBox.Show("Ошибка в введённых у/п транзисторах");
                     fin.Close();
                     return;
                 }

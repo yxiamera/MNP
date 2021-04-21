@@ -313,7 +313,7 @@ namespace MNP
             int i, j, ii, jj, l, m, g;
             double[,] ay = new double[4, 4];
             double[,] by = new double[4, 4];
-            int[,] in_d = { { 2, 3, 1, 3 }, { 1, 2, 2, 3 } };
+            int[,] in_d = { { 2, 3 }, { 1, 3 }, { 1, 2 }, { 2, 3 } };
             int[] in_ju = { 1, 3, 2, 3 };
             for (int ktu = 1; ktu <= GV.uniPolarTransistors; ktu++)
             {
