@@ -409,6 +409,8 @@ namespace MNP
                 form_ei();
                 form_oui();
                 form_tu();
+
+                form_w();
                 form_s();
 
                 if ((GV.lp == 1) && (GV.lm == 0) && (GV.kp == 2) && (GV.km == 0))

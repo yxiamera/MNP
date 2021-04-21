@@ -17,6 +17,8 @@ namespace MNP
 
         public Complex()
         {
+            re = 0;
+            im = 0;
         }
 
         public static Complex operator +(Complex c1)
